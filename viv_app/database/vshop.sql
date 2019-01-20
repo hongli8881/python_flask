@@ -295,3 +295,25 @@ INSERT INTO `user_Roles` (`role_id`, `user_id`) values
 (1,26),(2,12),(3,9);
 COMMIT;
 
+
+DROP TABLE IF EXISTS `roles`;
+
+CREATE TABLE IF NOT EXISTS `roles` (
+
+  `role_id` int(11) NOT NULL ,
+
+  `description` varchar(125) NOT NULL
+
+) DEFAULT CHARSET=utf8;
+
+ 
+
+DROP TABLE IF EXISTS `user_Roles`;
+
+CREATE TABLE IF NOT EXISTS `user_Roles` (
+
+  `role_Id` int(11) NOT NULL,
+
+  `user_Id` int(11) NOT NULL
+
+)  DEFAULT CHARSET=utf8;
