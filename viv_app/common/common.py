@@ -9,7 +9,7 @@ class OrderForm(Form):  # Create Order Form
                            choices=[('1', '1'), ('2', '2'), ('3', '3'), ('4', '4'), ('5', '5')])
     order_place = StringField('', [validators.length(min=1), validators.DataRequired()],
                               render_kw={'placeholder': 'Order Place'})
-class ProductList(object):
+class CategoryList(object):
 
     def __init__(self, category, products):
         self.category = category
@@ -26,3 +26,16 @@ class config ():
         'use_unicode': True,
         'get_warnings': True,
     }
+     
+class ProductList(object):
+
+    def __init__(self,id,pName,price,description,available,category,item,pCode,picture):
+        self.id=id
+        self.pName=pName
+        self.price=price
+        self.description=description
+        self.available=available
+        self.category=category
+        self.item=item
+        self.pCode=pCode
+        self.picture=picture
