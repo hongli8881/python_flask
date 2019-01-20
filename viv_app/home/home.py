@@ -4,7 +4,7 @@ Created on Jan 17, 2019
 @author: hong li
 '''
 from flask import Flask, render_template, flash, redirect, url_for, session, request, logging
-from common.common import OrderForm, ProductList, config
+from common.common import OrderForm, CategoryList, config
 from database.database import Connection
 import os
 from flask_uploads import UploadSet, configure_uploads, IMAGES
@@ -37,7 +37,7 @@ def index():
         name = cat[1]
         cur.execute("SELECT * FROM products WHERE category=%s ORDER BY RAND() LIMIT 4", (name,)) 
         data = cur.fetchall()
-        products.append(ProductList(cat[3], data));
+        products.append(CategoryList(cat[3], data));
     
     cur.close()
     db.close()
