@@ -293,7 +293,7 @@ CREATE TABLE IF NOT EXISTS `user_Roles` (
 
 INSERT INTO `user_Roles` (`role_id`, `user_id`) values
 (1,26),(2,12),(3,9);
-COMMIT;
+
 
 
 DROP TABLE IF EXISTS `roles`;
@@ -317,3 +317,9 @@ CREATE TABLE IF NOT EXISTS `user_Roles` (
   `user_Id` int(11) NOT NULL
 
 )  DEFAULT CHARSET=utf8;
+
+insert into roles (role_id,
+description) values (1,'Admin'),(2,'Manager'),(3,'Customer');
+insert into user_roles(role_Id,
+user_Id) values (1, 15),(2, 12),(3,9);
+COMMIT;
